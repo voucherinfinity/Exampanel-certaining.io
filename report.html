@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Page</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <link rel="stylesheet" href="/assets/style.css">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" media="print">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="print">
+    <link rel="stylesheet" href="/assets/style.css" media="print">
+</head>
+
+<style>
+    
+      .table{
+        margin-top: 1rem;
+    }
+
+      .table td, .table th {
+            border: none !important;
+            padding-top: 1rem !important;
+            background-color: rgb(41, 41, 41) !important;
+            color: white !important;
+        }
+        .but1{
+            float: right;
+
+        }
+
+  @media print {
+         .report {
+            display: none;
+        }
+
+        *{
+            background-color: rgb(41, 41, 41);
+        }
+     
+        * {
+          -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+      }
+      body {
+            background-color: rgb(41, 41, 41) !important;
+            color: rgb(255, 255, 255) !important;
+        }
+        .print.container {
+            background-color: rgb(41, 41, 41) !important;
+            color: white !important;
+        }
+        .table {
+            margin-top: 1rem;
+            border-collapse: collapse !important;
+        }
+        .table td, .table th {
+            border: none !important;
+            padding-top: 1rem !important;
+            background-color: rgb(41, 41, 41) !important;
+            color: white !important;
+        }
+        .print-row {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-between;
+        }
+        /* Make each column take 50% of the width */
+        .print-col-6 {
+            width: 38%; /* Adjust to 48% for some spacing */
+            box-sizing: border-box;
+        }
+        hr {
+            border-color: white;
+            width: 100%;
+            display: block; /* Ensure it is displayed */
+        }
+    }
+     
+</style>
+<body style="background-color: rgb(0, 0, 0); color: white;">
+
+    <!-- Container for responsive layout -->
+    <div class="container-fluid report">
+        <div class="d-flex justify-content-between align-items-center p-3" style="background-color: rgb(41, 41, 41);">
+            <!-- Logo -->
+            <img src="/assets/img/Logo.png" width="80" height="80" alt="Logo" class="img-fluid">
+
+            <!-- Time Remaining Section -->
+            <div class="d-flex align-items-center">
+                <p class="mb-0 " style="color: white; font-size: 2.2rem;">Score Report </p>
+               
+            </div>
+
+            <!-- Profile Section -->
+            <div class="text-center">
+                <img src="/assets/img/images.png" class="img-thumbnail" width="60" style="border-radius: 50%;" alt="Profile">
+                <p class="m-0" style="color: white; font-size: 1.1rem;">Jeetnder</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- <div class="container mt-5 ">
+        <div class="row ml-2">
+            <div class="col-lg-7  pt-3 pb-5 " style="background-color: rgb(41, 41, 41);">
+                <div class="d-flex justify-content-between ">
+                    <div class="d-flex pt-2">
+                        <div style="background-color: black; " class="p-2"> <i class="fa fa-graduation-cap fa-3x" aria-hidden="true"></i></div>                       
+                        <p class="pt-2 pl-2" style="font-size: smaller;">
+                            CERTIFIED TEST CENTER
+                            <br>ADMINISTRATION
+                        </p>
+                    </div>
+                    <div class="d-flex pt-2">
+                        
+                        <div class="p-2" style="background-color: black;">
+                            <i class="fa fa-graduation-cap fa-3x" aria-hidden="true"></i>
+                        </div>
+                       
+                         <p class="pt-2 pl-2" style="font-size: smaller;">
+                             QUESTION <br>
+                             1 OUT OF 20
+                         </p>
+                     </div>
+                </div>
+                <hr class="custom-hr">
+               <div class="questionlist">
+                    <div class="questionans" data-question="1">
+                        <h4 class="question">
+                            What is digital marketing?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Traditional marketing techniques
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                Marketing using digital channels and technologies
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Marketing only on social media platforms
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                Marketing only through mobile devices
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="2">
+                        <h4 class="question">
+                            Which of the following is the correct depiction of Digital Marketing?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                E-mail Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                Social Media Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Web Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                All of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="3">
+                        <h4 class="question">
+                            Which of the following is incorrect about digital marketing?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Digital marketing can only be done offline
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                Digital marketing cannot be done offline.
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Digital marketing requires electronic devices for promoting goods and services.
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                In general, digital marketing can be understood as online marketing, web marketing, and e-mail marketing.
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="4">
+                        <h4 class="question">
+                            How many types of pillars do we have in digital marketing?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                1
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                2
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                3
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                4
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="5">
+                        <h4 class="question">
+                            Which of the following is involved in the digital marketing process?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                RSA
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                Voice Broadcasting
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Podcasting
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                All of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="6">
+                        <h4 class="question">
+                            What is considered while creating a front page of the website or homepage?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                References of other websites
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="7">
+                        <h4 class="question">
+                            What is the name of the process in which marketing is achieved by incorporating tools, techniques, electronic devices, technologies, or systems?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Internet Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="8">
+                        <h4 class="question">
+                            What is the name of the process in which marketing is achieved by incorporating tools, techniques, electronic devices, technologies, or systems?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Internet Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="9">
+                        <h4 class="question">
+                            What is the name of the process in which marketing is achieved by incorporating tools, techniques, electronic devices, technologies, or systems?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Internet Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="10">
+                        <h4 class="question">
+                            What is the name of the process in which marketing is achieved by incorporating tools, techniques, electronic devices, technologies, or systems?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Internet Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="11">
+                        <h4 class="question">
+                            What is the name of the process in which marketing is achieved by incorporating tools, techniques, electronic devices, technologies, or systems?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Internet Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="12">
+                        <h4 class="question">
+                            What is the name of the process in which marketing is achieved by incorporating tools, techniques, electronic devices, technologies, or systems?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Internet Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="13">
+                        <h4 class="question">
+                            What is the name of the process in which marketing is achieved by incorporating tools, techniques, electronic devices, technologies, or systems?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Internet Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="14">
+                        <h4 class="question">
+                            What is the name of the process in which marketing is achieved by incorporating tools, techniques, electronic devices, technologies, or systems?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Internet Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="15">
+                        <h4 class="question">
+                            What is the name of the process in which marketing is achieved by incorporating tools, techniques, electronic devices, technologies, or systems?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Internet Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="16">
+                        <h4 class="question">
+                            What is the name of the process in which marketing is achieved by incorporating tools, techniques, electronic devices, technologies, or systems?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Internet Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="17">
+                        <h4 class="question">
+                            What is the name of the process in which marketing is achieved by incorporating tools, techniques, electronic devices, technologies, or systems?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Internet Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="18">
+                        <h4 class="question">
+                            What is the name of the process in which marketing is achieved by incorporating tools, techniques, electronic devices, technologies, or systems?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Internet Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="19">
+                        <h4 class="question">
+                            What is the name of the process in which marketing is achieved by incorporating tools, techniques, electronic devices, technologies, or systems?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Internet Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionans" data-question="20">
+                        <h4 class="question">
+                            What is the name of the process in which marketing is achieved by incorporating tools, techniques, electronic devices, technologies, or systems?
+                        </h4>
+                        <form>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option1" value="traditional" checked>
+                            <label class="form-check-label" for="option1">
+                                Internet Marketing
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option2" value="digital">
+                            <label class="form-check-label" for="option2">
+                                A brief elaboration about the company
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option3" value="socialMedia">
+                            <label class="form-check-label" for="option3">
+                                Logos portraying the number of awards won by the web designer
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="marketingOptions" id="option4" value="mobile">
+                            <label class="form-check-label" for="option4">
+                                None of the above
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+               </div>
+            </div>
+            <div class="col-lg-5" >
+                <div class=" p-4" style="background-color: rgb(41, 41, 41);">
+                    <h3>Exam Status</h3>
+                    <br>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="d-flex">
+                                <div class="toggle-buttons-container">
+                                    <div class="toggle-button1" data-question="1" data-toggle="modal" data-target="#myModal1" style="background-color: green">2</div>                                   
+                                    <p class="  d-flex align-items-center" data-toggle="modal" data-target="#myModal1" >Answred</p> 
+                                </div>
+                               
+                               
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex">
+                                <div class="toggle-buttons-container" data-toggle="modal" data-target="#myModal2">
+                                    <div class="toggle-button1" data-question="1" style="background-color: grey;">1</div>                                   
+                                    <p class="  d-flex align-items-center">Not answred</p>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="col-6 mt-1">
+                            <div class="d-flex">
+                                <div class="toggle-buttons-container" data-toggle="modal" data-target="#myModal3">
+                                    <div class="toggle-button1" data-question="1" style="background-color: black;">15</div>                                   
+                                    <p class="  d-flex align-items-center">Not visited</p>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="col-6 mt-1">
+                            <div class="d-flex">
+                                <div class="toggle-buttons-container" data-toggle="modal" data-target="#myModal4">
+                                    <div class="toggle-button1" data-question="1" style="background-color: rgb(76, 0, 255);">1</div>                                   
+                                    <p class="  d-flex align-items-center">Active  question</p>
+                                </div>                               
+                            </div>
+                        </div>
+                        <div class="col-12 mt-1">
+                            <div class="d-flex">
+                                <div class="toggle-buttons-container" data-toggle="modal" data-target="#myModal5">
+                                    <div class="toggle-button1" data-question="1" style="background-color: red;">1</div>                                   
+                                    <p class="  d-flex align-items-center"> Mark for review</p>
+                                </div>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" mt-4 p-4" style="background-color: rgb(41, 41, 41);">
+                    <h3>Question Pattle</h3>
+                    <br>
+                    <div class="row">
+                        <div class="toggle-buttons-container">
+                            <div class="toggle-button" data-question="1" style="background-color: green;">1</div>
+                            <div class="toggle-button" data-question="2" style="background-color: green;">2</div>
+                            <div class="toggle-button" data-question="3" style="background-color: grey;">3</div>
+                            <div class="toggle-button" data-question="4" style="background-color: black;">4</div>
+                            <div class="toggle-button" data-question="5" style="background-color: rgb(76, 0, 255);;">5</div>
+                            <div class="toggle-button" data-question="6" style="background-color: red;">6</div>
+                            <div class="toggle-button" data-question="7">7</div>
+                            <div class="toggle-button" data-question="8">8</div>
+                            <div class="toggle-button" data-question="9">9</div>
+                            <div class="toggle-button" data-question="10">10</div>
+                            <div class="toggle-button" data-question="11">11</div>
+                            <div class="toggle-button" data-question="12">12</div>
+                            <div class="toggle-button" data-question="13">13</div>
+                            <div class="toggle-button" data-question="14">14</div>
+                            <div class="toggle-button" data-question="15">15</div>
+                            <div class="toggle-button" data-question="16">16</div>
+                            <div class="toggle-button" data-question="17">17</div>
+                            <div class="toggle-button" data-question="18">18</div>
+                            <div class="toggle-button" data-question="19">19</div>
+                            <div class="toggle-button" data-question="20">20</div>
+                          </div>
+                    </div>
+                </div>
+                            
+            </div>
+            
+            
+        </div>
+        
+       
+        
+    </div> -->
+    <div class="print container " style="background-color: rgb(41, 41, 41);">
+        <div class="row mt-5 print d-flex ">
+            <div class="col-12 mt-5">
+                <img src="/assets/img/Logo1 (3).png" width="300" alt="" srcset="">
+                <hr color="white" width="100%">
+            </div>
+            <div class="col-12 col-lg-12">
+                <p style="text-transform: uppercase; font-size: 2.5rem; font-weight: 600; text-align: center; ">Certified Test Center Administration</p>
+            </div>
+            <div class="col-6">
+                <table class="table" style="border: none; ">
+                    <tbody>
+                        <tr>
+                            <td scope="row" style="color: white;">Date Of Exam</th>
+                            <td style="color: white;">:</td>
+                            <td style="color: white;">08 October 2024</td> 
+                        </tr>
+                        <tr>
+                            <td scope="row" style="color: white;">Candidate Name</th>
+                            <td style="color: white;">:</td>
+                            <td style="color: white;">Jeetender</td>
+                        </tr>
+                        <tr>
+                            <td scope="row" style="color: white;">Candodate Id</td>
+                            <td style="color: white;">:</td>
+                            <td style="color: white;">BC66689386</td>
+                        </tr>
+                        <tr>
+                            <td scope="row" style="color: white;">Test Center ID</td>
+                            <td style="color: white;">:</td>
+                            <td style="color: white;">BTC1134</td>
+                        </tr>
+                        <tr>
+                            <td scope="row" style="color: white;">Exam Code</td>
+                            <td style="color: white;">:</td>
+                            <td style="color: white;">CTCA01</td>
+                        </tr>   
+                        <tr>
+                            <td scope="row" style="color: white;">Maximum Score</td>
+                            <td style="color: white;">:</td>
+                            <td style="color: white;">100</td>
+                        </tr> 
+                        <tr>
+                            <td scope="row" style="color: white;">Minimum Score</td>
+                            <td style="color: white;">:</td>
+                            <td style="color: white;">60</td>
+                        </tr>
+                        <tr>
+                            <td scope="row" style="color: white;">Candidate Score</td>
+                            <td style="color: white;">:</td>
+                            <td style="color: white;">60</td>
+                        </tr>   
+                        <tr>
+                            <td scope="row" style="color: white;">Result</td>
+                            <td style="color: white;">:</td>
+                            <td style="color: white;">Pass</td>
+                        </tr>
+                    </tbody>
+                </table>            
+            </div>
+            <div class="col-6">
+                <div class="border border-white p-2">
+                    <h3>Important Information</h3>
+                    <p>Certaining assures the validity of examination for consistency. Your score may be classified as indeterminate if it is at or above the passing level and certaining cannot certify that it represents a valid measure of your ability. After review and analysis, your score will either be:
+                    </p>
+                    <p>Classified as "valid" and your official exam result will be reported at www.certaining.org/login You can view exam results by using your email address and password.</p>
+                    <p>Classified as indeterminate and you will be advised of the options for retaking the examination. </p>
+                    <p>If this exam completes certification requirement and provide you with certification number, the certificate can be www.heycart.com validate validated at</p>
+                    <p>Please ensure that your name and email address are correct. You will receive an email with instructions explaining how to obtain your certificate, if applicable. </p>
+                    <p>For additional information, www.certaining.org/contact visit:</p>
+                </div>
+            </div>
+            <div class="col-12 mt-5">
+                <h3>PLEASE READ THE FOLLOWING:-</h3>
+                <P>
+                    The score information displayed on this report is provisional report and constitute as an official score report. certaining seeks to assure the validity of exam scores by analyzing exam responses for consistency. Within next 48 hours you will receive an email providing details for accessing your candidate portal, where you can download your E-certificate. For further queries, kindly mail us at in fola being certaining.org or visit our website www.certaining.org
+                </P>
+                <P>
+                    This examination was delivered at a certaining Authorized Test Center. To register for another certaining exam, contact your local certaining Authorized Center or log on to: certaining.org.
+                </P>
+                <P>
+                    As a certaining certification candidate, you deserve a fair and secure experience. Please report any suspicious behavior you observe to info certaining.org. Examples of such behavior include receiving help or copying from another test taker, taking a test for someone else, accessing stolen test questions, or using notes or unauthorized aids. Thank you for your assistance in helping to detect and prevent there unfair testing practices.
+                </P>
+            </div>
+
+           
+        </div>        
+    </div>
+    <div class="container mt-4 mb-5 pb-5 report" >
+        <div class="row">
+            <div class="col-12" style="float: right;">
+                <button  class="btn btn-primary but1 " style="background-color: red; border: none;">Exit </button>
+                <button onclick="window.print()" class="btn btn-primary but1 mr-1"  >Print </button>
+            </div>
+        </div>
+        
+     
+    </div>
+    <!-- Scripts -->
+     
+    <script src="/assets/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
